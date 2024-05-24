@@ -211,6 +211,10 @@ header{
         font-size: 2.8rem;
 
     }
+    h2{
+        font-size: 1.4rem;
+        text-align: center;
+    }
     }
     menu{
         a:is(:link, :visited){
