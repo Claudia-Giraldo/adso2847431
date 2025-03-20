@@ -14,13 +14,14 @@ return new class extends Migration
         Schema::create('pets', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('image')->defaulta('no-image.png');
+            $table->string('image')->default('no-image.png');
             $table->string('kind');
             $table->integer('weight');
             $table->integer('age');
             $table->string('breed');
             $table->string('location');
             $table->text('description');
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }

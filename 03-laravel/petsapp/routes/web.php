@@ -19,4 +19,12 @@ Route::middleware(['auth'])->group(function () {
     Volt::route('settings/appearance', 'settings.appearance')->name('settings.appearance');
 });
 
-require __DIR__.'/auth.php';
+//LISTAR TODOS LOS USUARIOS QUE ESTAN EN LA FABRICA
+
+Route:: get('show/users', function(){
+    $users = App\Models\User::all();
+    //dd($users->toArray()); //muestra informacion pero no ejecuta nada
+    return view('users-factory')->with('users', $users); //lo que esta entre comillas es el alias 
+
+});
+//reguisitos para la vista tiene que tener play

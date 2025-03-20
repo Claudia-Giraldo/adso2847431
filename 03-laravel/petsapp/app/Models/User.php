@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
 
-class User extends Authenticatable
+class User extends Authenticatable  
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
@@ -19,9 +19,15 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
-        'name',
+        'document',
+        'fullname',
+        'gender',
+        'birthdate',
+        'photo',
+        'phone',
         'email',
         'password',
+        'role'
     ];
 
     /**
@@ -56,5 +62,9 @@ class User extends Authenticatable
             ->explode(' ')
             ->map(fn (string $name) => Str::of($name)->substr(0, 1))
             ->implode('');
+    }
+
+    public function adoptions(){
+       return $this->hasMany(Adoption::class); //tiene muchas adopciones 
     }
 }
