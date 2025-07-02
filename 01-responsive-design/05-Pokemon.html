@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokemon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/pokemon_style.css">
+  </head>
+  <body>
+<header>
+  <div class="header-content">
+    <h1>PokeLand</h1>
+        <div class="pokeball-bg">
+            <img src="img/pokeball.png" alt="pokeball" class="pokeball">
+        </div>
+        <div class="select-pokeball">
+        <select id="generationSelect">
+            <option value="1">Generación I</option>
+            <option value="2">Generación II</option>
+            <option value="3">Generación III</option>
+        </select>
+        </div>
+  </div>
+</header>
+  <div class="grid" id="pokemonGrid">
+    
+  </div>
+
+  <div class="modal" id="pokemonModal">
+    <div class="modal-content" id="modalContent">
+      <!-- contenido dinámico -->
+    </div>
+  </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
